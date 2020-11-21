@@ -37,3 +37,12 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog:post_detail', args=[self.publish.year, self.publish.month, self.publish.day, self.slug])
 
+class Applications(models.Model):
+    name = models.CharField(verbose_name='Name', max_length= 30)
+    mail = models.CharField(verbose_name='Email', max_length= 100)
+    subject = models.CharField(verbose_name='Subject', max_length= 200)
+    comment = models.TextField(verbose_name='Message')
+    def str(self):
+        return self.mail
+
+
